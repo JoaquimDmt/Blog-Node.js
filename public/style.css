@@ -3,4 +3,13 @@ body{
 }
 ul{
     background-color: skyblue;
+    list-style: none;
+    padding: 16px
+}
+li:not(:last-child){
+    margin-bottom: 8px;
+}
+li a{
+    font-size: 24px;
+    color: midnightblue;
 }

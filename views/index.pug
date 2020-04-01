@@ -9,6 +9,6 @@ block content
     each article in articles
         ul
             li
-                a(href="")=article.title
+                a(href="/article/"+article._id)=article.title
             li= article.content
             li= 'Publié le ' + article.dateCreated + ' par ' + article.author.name + ' ' +article.category.title 
