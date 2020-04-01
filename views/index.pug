@@ -1,9 +1,14 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body
-        h1 Salut
-        p Lorem ipsum dolor sit amet co
+extends layout.pug
+ 
+block variables
+    - let title = 'Accueil';
+ 
+block content
+    h1 Bienvenue sur mon blog Node
+    p Voici la liste des derniers articles du blog
+    each article in articles
+        ul
+            li
+                a(href="")=article.title
+            li= article.content
+            li= 'Publié le ' + article.dateCreated + ' par ' + article.author.name + ' ' +article.category.title 
