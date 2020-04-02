@@ -5,11 +5,11 @@ const Article = require('./models/Article.model')
 const Authors = require('./models/Author.model')
 const Category = require('./models/Category.model')
 
-blogRouter.get('/', (req, res) =>{
-    Article.find().populate('author category').sort({dateCreated: 'desc'}).exec().then(articles => {
+blogRouter.get('/', async (request, response) =>{
+    await Article.find().populate('author category').sort({dateCreated: 'desc'}).exec().then(articles => {
         // console.log({articles})
-        res.render('index.pug', { articles })
-    }).catch(error => res.send(error)) 
+        response.render('index.pug', { articles })
+    }).catch(error => response.send(error)) 
 });
 blogRouter.get('/article/:id', async (req, res) =>{
     await Article.findById(req.params.id).populate('author category').exec().then(article => {
@@ -20,8 +20,11 @@ blogRouter.get('/article/:id', async (req, res) =>{
         res.render('article.pug', { article })
     }).catch(error => res.send(error))
 });
-blogRouter.get('/admin', (request, response) =>{
-    response.send('Hello Admin Jo !');
+blogRouter.get('/admin/admin', (req, res) =>{
+    // response.send('Hello Admin Jo !');
+    Article.find().populate('author category').sort({dateCreated: 'desc'}).exec().then(articles => {
+        res.render('admin/admin.pug', { articles })
+    }).catch(error => res.send(error)) 
 });
 
 module.exports = blogRouter;

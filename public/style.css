@@ -13,3 +13,16 @@ li a{
     font-size: 24px;
     color: midnightblue;
 }
+table{
+    border-spacing: 0;
+}
+th, td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 4px 8px;
+    font-size: large;
+}
+img{
+    width: 20px;
+    vertical-align: text-top;
+}
