@@ -29,7 +29,8 @@ block content
                     = article.dateCreated.toLocaleDateString()+','
                     br
                     = article.dateCreated.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})
-                td= article.title
+                td
+                    a(href="../article/"+article._id)= article.title
                 td= article.author.name
                 td= article.category.title
                 td

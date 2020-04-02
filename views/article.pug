@@ -5,8 +5,5 @@ block variables
  
 block content
     h1= article.title
-    h2= "Article par "+article.author.name 
-    form(action="contact/send", method="post")
-        input(type="text", name="text")
-        textarea(name="message", cols="30", rows="10")
-        button(type="submit") Send
+    h2= "Article par "+article.author.name
+    p= article.content
