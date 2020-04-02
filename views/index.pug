@@ -11,4 +11,4 @@ block content
             li
                 a(href="/article/"+article._id)=article.title
             li= article.content
-            li= 'Publié le ' + article.dateCreated + ' par ' + article.author.name + ' ' +article.category.title 
+            li= 'Publié le ' + article.dateCreated.toLocaleDateString() + ' par ' + article.author.name + ' ' +article.category.title 
