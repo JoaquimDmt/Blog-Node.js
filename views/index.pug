@@ -9,6 +9,13 @@ block content
     each article in articles
         ul
             li
-                a(href="/article/"+article._id)=article.title
-            li= article.content
-            li= 'Publié le ' + article.dateCreated.toLocaleDateString() + ' par ' + article.author.name + ' ' +article.category.title 
+                a.nomarticle(href="/article/"+article._id)=article.title
+            li
+                .etc= article.content
+                a.more(href="/article/"+article._id) Read more...
+            li
+                i.icon-calendar
+                = ' Publié le ' + article.dateCreated.toLocaleDateString() + ' par ' + article.author.name
+                div.catego
+                    i.icon-tag 
+                    = article.category.title 

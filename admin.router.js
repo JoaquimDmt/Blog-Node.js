@@ -27,6 +27,13 @@ adminRouter.get('/admin/write', (req, res) => {
     ])
     .then(([authors, categories]) => res.render('admin/write.pug', { authors, categories }))
     .catch(error => res.send(error.message))
+})
+/**
+* GET /delete/:id
+* Supprimer un article
+*/
+adminRouter.get('/admin/delete/:id', (req, res) => {
+    Article.findByIdAndDelete()
  })
  
 module.exports = adminRouter;
