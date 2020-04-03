@@ -43,3 +43,15 @@ img{
 .catego{
     float: right;
 }
+.admin-menu{
+    float: right;
+    font-size: 20px;
+    margin-right: 8px;
+    padding: 6px 10px 6px 6px;
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+}
+.backhome{
+    padding: 6px 10px;
+}

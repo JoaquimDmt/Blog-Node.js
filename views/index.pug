@@ -5,7 +5,10 @@ block variables
  
 block content
     h1 Bienvenue sur mon blog Node
-    p Voici la liste des derniers articles du blog
+        a.admin-menu(href="/admin/admin")
+            i.icon-cog
+            | Administration 
+    p Voici la liste des derniers articles du blog :
     each article in articles
         ul
             li
