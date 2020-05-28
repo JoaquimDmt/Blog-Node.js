@@ -6,15 +6,21 @@ const app = express();
 const blogRouter = require('./blog.router');
 const adminRouter = require('./admin.router');
 
+const bodyParser = require('body-parser')
+
+
 app.set('views engine', 'pug'); // Indique à Express que le moteur de templating à utiliser 
 app.set('views', './views'); //Indique à Express le dossier
 
 const PORT = 9000;
 const HOST = 'localhost';
 
+app.use(bodyParser.urlencoded({extended: false}))
+// Routes are the last thing we must call (bodyparser before routes)
 app.use('/', blogRouter); // Traite les routes pour la partie front-office
-app.use('/', adminRouter); // Traite les routes pour la partie gestion administrateur
+app.use('/admin/', adminRouter); // Traite les routes pour la partie gestion administrateur
 app.use(express.static('./public'));
+
 
 // Démarrage de l'application
 

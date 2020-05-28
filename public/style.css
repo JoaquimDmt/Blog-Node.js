@@ -55,3 +55,11 @@ img{
 .backhome{
     padding: 6px 10px;
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+select{
+    margin-right: auto;
+}
