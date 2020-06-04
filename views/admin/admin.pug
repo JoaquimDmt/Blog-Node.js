@@ -6,11 +6,13 @@ block variables
 block content
     h1 Espace Administration
         a.admin-menu.backhome(href="/") Retour à l'Accueil
+    h2 Ajouter un Article
+    a(href="/admin/write") Cliquez sur ce lien
+    h2 Gestion des Articles existants
     table
         tr
             th #
             th
-                //- img(src='../img/calendar.svg' alt='')
                 i.icon-calendar
                 |  Date de <br>publication
             th Titre
@@ -36,7 +38,7 @@ block content
                 td= article.category.title
                 td
                     i.icon-pencil
-                    a(href='') Modifier
+                    a(href='./edit/'+article._id) Modifier
                     br
                     i.icon-trash
-                    a(href='') Supprimer
+                    a(href='./delete/'+article._id) Supprimer

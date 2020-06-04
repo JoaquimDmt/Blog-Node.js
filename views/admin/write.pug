@@ -8,19 +8,19 @@ block content
     form(action="/admin/write", method="post")
 
         label Titre :
-        input(type="text", name="titre")
+        input(type="text", name="titre", required)
 
         label Catégorie :
-        select(name="categorie")
+        select(name="categorie", required)
             option(value="") --Please choose an option--
             each categorie in categories
                 option(value=categorie.id) #{categorie.title}
 
         label Contenu :
-        textarea(name="contenu", cols="30", rows="10")
+        textarea(name="contenu", cols="30", rows="10", required)
 
         label Auteur :
-        select(name="auteur")
+        select(name="auteur", required)
             option(value="") --Please choose an option--
             each author in authors
                 option(value=author.id) #{author.name}

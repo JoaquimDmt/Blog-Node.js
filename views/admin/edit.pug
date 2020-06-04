@@ -1,4 +1,31 @@
-form(action="contact/send", method="post")
-        input(type="text", name="text")
-        textarea(name="message", cols="30", rows="10")
-        button(type="submit") Send
+extends ../layout.pug
+ 
+block variables
+    - let title = 'Article';
+ 
+block content
+    h1= 'Modifier l\'article "'+article.title+'"'
+        a.admin-menu(href="/admin/admin")
+            i.icon-cog
+            | Retour au panel Admin 
+    form(action="/admin/edit/"+article._id, method="post")
+
+        label Titre :
+        input(type="text", name="titre", value=article.title, required)
+
+        label Catégorie :
+        select(name="categorie")
+            option(value=article.category.id) #{article.category.title}
+            each categorie in categories
+                option(value=categorie.id) #{categorie.title}
+
+        label Contenu :
+        textarea(name="contenu", cols="30", rows="10", required) #{article.content}
+
+        label Auteur :
+        select(name="auteur")
+            option(value=article.author.id) #{article.author.name}
+            each author in authors
+                option(value=author.id) #{author.name}
+
+        button(type='submit') Publier

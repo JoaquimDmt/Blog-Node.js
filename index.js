@@ -8,7 +8,7 @@ const adminRouter = require('./admin.router');
 
 const bodyParser = require('body-parser')
 
-
+mongoose.set('useFindAndModify', false);
 app.set('views engine', 'pug'); // Indique à Express que le moteur de templating à utiliser 
 app.set('views', './views'); //Indique à Express le dossier
 
