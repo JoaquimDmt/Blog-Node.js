@@ -8,6 +8,9 @@ ul{
     list-style: none;
     padding: 16px 22px
 }
+ul:last-of-type{
+    margin-bottom: 0;
+}
 li:not(:last-child){
     margin-bottom: 8px;
 }
@@ -28,6 +31,9 @@ th, td{
     padding: 4px 8px;
     font-size: large;
 }
+td:nth-child(3){
+    padding: 4px 12px;
+}
 img{
     width: 20px;
     vertical-align: text-top;
@@ -43,17 +49,17 @@ img{
 .catego{
     float: right;
 }
-.admin-menu{
+.nav-button, .nav-button-admin{
     float: right;
     font-size: 20px;
     margin-right: 8px;
-    padding: 6px 10px 6px 6px;
+    padding: 6px 10px;
     background-color: royalblue;
     color: white;
     text-decoration: none;
 }
-.backhome{
-    padding: 6px 10px;
+.nav-button-admin{
+    padding: 6px 10px 6px 6px;
 }
 
 form{
@@ -62,4 +68,12 @@ form{
 }
 select{
     margin-right: auto;
+}
+button a{
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+}
+footer{position: absolute; margin: 16px 0;}
+footer a{
 }

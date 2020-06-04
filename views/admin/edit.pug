@@ -5,7 +5,7 @@ block variables
  
 block content
     h1= 'Modifier l\'article "'+article.title+'"'
-        a.admin-menu(href="/admin/admin")
+        a.nav-button-admin(href="/admin/admin")
             i.icon-cog
             | Retour au panel Admin 
     form(action="/admin/edit/"+article._id, method="post")

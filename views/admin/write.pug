@@ -5,6 +5,10 @@ block variables
  
 block content
     h1 Nouvel Article
+        a.nav-button-admin(href="/admin/admin")
+            i.icon-cog
+            | Retour au panel Admin
+            
     form(action="/admin/write", method="post")
 
         label Titre :
